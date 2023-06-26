@@ -2,7 +2,7 @@
 
 This is a project that showcases moss pictures using React with TypeScript. It was built using Vite, for faster development.
 
-It's still a WIP and I'm planning to add these functionalities:
+It's still a WIP and I'm planning to add these functionalities and more:
 1. Search bar functionality.
 2. Create routes for the shown links.
 3. Implement the main gallery functionality, to show the images.
