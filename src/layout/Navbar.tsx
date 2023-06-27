@@ -51,9 +51,10 @@ export default function Navbar() {
   return (
     <Box
       sx={{
-        position: "fixed",
+        position: "absolute",
         top: 0,
         left: 0,
+        right: 0,
         margin: "20px",
         width: "calc(100% - 40px)",
         height: "80px",

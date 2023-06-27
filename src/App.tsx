@@ -1,12 +1,14 @@
-import MainLayout from "./layout/Homepage";
+import React from "react";
+import HomePage from "./homepage/HomePage";
+import ImageGallery from "./layout/ImageGallery";
+import MainLayout from "./layout/MainLayout";
 
 const App: React.FC = () => {
   return (
-    <MainLayout>
-      {/* <ImageGallery>
-        <ImageCard title="img 1" description="It's moss I guess" />
-      </ImageGallery> */}
-    </MainLayout>
+    <HomePage></HomePage>
+    // <MainLayout>
+    //   <ImageGallery></ImageGallery>;
+    // </MainLayout>
   );
 };
 
