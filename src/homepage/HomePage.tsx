@@ -20,26 +20,13 @@ interface MossCareTip {
 }
 
 export default function HomePage() {
-  const [selectedCategory, setSelectedCategory] = useState("All");
   const [funFact, setFunFact] = useState("");
+  const [expandedTipIndex, setExpandedTipIndex] = useState<number | null>(null);
 
   const generateFunFact = () => {
     const randomIndex = Math.floor(Math.random() * funFacts.length);
     setFunFact(funFacts[randomIndex]);
   };
-
-  const handleCategorySelect = (category: string) => {
-    setSelectedCategory(category);
-  };
-
-  const filteredTips: MossCareTip[] =
-    selectedCategory === "All"
-      ? mossCareTips
-      : mossCareTips.filter(
-          (tip: MossCareTip) => tip.category === selectedCategory
-        );
-
-  const [expandedTipIndex, setExpandedTipIndex] = useState<number | null>(null);
 
   const handleTipToggle = (index: number) => {
     if (expandedTipIndex === index) {
@@ -97,7 +84,7 @@ export default function HomePage() {
           onClick={generateFunFact}
           sx={{
             backgroundColor: "rgba(200, 225, 225, 0.7)",
-            color: "#464545",
+            color: "#323232",
             fontWeight: "bold",
             borderRadius: "10px",
             padding: "10px 20px",
@@ -136,7 +123,7 @@ export default function HomePage() {
           these moss care tips to help you get started!
         </Typography>
         <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
-          {filteredTips.map((tip: MossCareTip, index: number) => (
+          {mossCareTips.map((tip: MossCareTip, index: number) => (
             <li key={index}>
               <Button
                 variant="text"
