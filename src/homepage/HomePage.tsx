@@ -46,17 +46,37 @@ export default function HomePage() {
     <MainLayout
       positionStyles={{
         width: "50%",
+        left: "20px",
+        right: "auto",
+        marginRight: "auto",
+        marginLeft: 0,
       }}
     >
       <Box sx={{ textAlign: "center", padding: "2rem" }}>
-        <Typography variant="h3" component="h1" gutterBottom>
+        <Typography
+          variant="h3"
+          component="h1"
+          gutterBottom
+          sx={{
+            textShadow: "2px 2px 4px rgba(0, 0, 0, 0.8)",
+            fontWeight: "bold",
+          }}
+        >
           Welcome to the Moss Gallery
         </Typography>
-        <Typography variant="body1" component="p" gutterBottom>
+        <Typography
+          variant="body1"
+          component="p"
+          gutterBottom
+          sx={{
+            textShadow: "2px 2px 4px rgba(0, 0, 0, 0.8)",
+            marginBottom: "1rem",
+          }}
+        >
           Explore the beauty and diversity of moss in our gallery. Discover
           captivating images and learn fascinating facts about moss.
         </Typography>
-        <Button
+        {/* <Button
           //   component={GalleryPage}
           //   to="/gallery"
           variant="contained"
@@ -64,11 +84,27 @@ export default function HomePage() {
           sx={{ marginTop: "2rem" }}
         >
           View Gallery
-        </Button>
-        <Typography variant="h5" component="h2" gutterBottom>
-          Fun facts about moss: randomfactgenerator
+        </Button> */}
+        <Typography
+          variant="h5"
+          component="h2"
+          gutterBottom
+          sx={{
+            textShadow: "2px 2px 4px rgba(0, 0, 0, 0.8)",
+            marginBottom: "1rem",
+          }}
+        >
+          Click here for a fun fact about moss!: randomfactgenerator
         </Typography>
-        <Typography variant="h6" component="h3" gutterBottom>
+        <Typography
+          variant="body1"
+          component="p"
+          gutterBottom
+          sx={{
+            textShadow: "2px 2px 4px rgba(0, 0, 0, 0.8)",
+            marginBottom: "1rem",
+          }}
+        >
           Excited to grow your own moss after exploring the gallery? Check out
           these moss care tips to help you get started!
         </Typography>
@@ -79,9 +115,10 @@ export default function HomePage() {
                 variant="text"
                 onClick={() => handleTipToggle(index)}
                 sx={{
-                  width: "100%",
-                  justifyContent: "flex-start",
+                  width: "30%",
+                  justifyContent: "flex-center",
                   textTransform: "none",
+                  textShadow: "2px 2px 4px rgba(0, 0, 0, 0.8)",
                   "&:hover": {
                     backgroundColor: "rgba(211, 211, 211, 0.5)",
                   },
@@ -103,7 +140,6 @@ export default function HomePage() {
               {expandedTipIndex === index && (
                 <div>
                   <p>{tip.description}</p>
-                  <p>Category: {tip.category}</p>
                 </div>
               )}
             </li>

@@ -58,10 +58,12 @@ export default function Navbar() {
         margin: "20px",
         width: "calc(100% - 40px)",
         height: "80px",
-        backgroundColor: "rgba(225, 225, 225, 0.4)",
+        backgroundColor: "rgba(200, 200, 200, 0.4)",
         padding: "1rem",
         zIndex: 1,
         borderRadius: "10px",
+        boxShadow:
+          "inset 0 0 0 1px rgba(255, 255, 255, 0.6), 0 8px 10px rgba(0, 0, 0, 0.6)",
         backdropFilter: "blur(3px)",
         display: "flex",
         alignItems: "center",
