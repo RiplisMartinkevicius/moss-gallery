@@ -1,5 +1,27 @@
-// Did you know that mosses can survive extreme temperatures and can even freeze and thaw without damage?
-// Mosses are known for their ability to absorb and retain water, making them excellent natural sponges.
-// Mosses reproduce through spores rather than seeds, allowing them to colonize diverse habitats.
-// Some cultures consider moss to be a symbol of tranquility and use it in meditation gardens or Zen arrangements.
-// Mosses have been used for centuries in traditional medicine for their potential healing properties.
+export const funFacts = [
+  "Did you know that mosses can survive extreme temperatures and can even freeze and thaw without damage?",
+  "Mosses are known for their ability to absorb and retain water, making them excellent natural sponges.",
+  "Mosses reproduce through spores rather than seeds, allowing them to colonize diverse habitats.",
+  "Some cultures consider moss to be a symbol of tranquility and use it in meditation gardens or Zen arrangements.",
+  "Mosses have been used for centuries in traditional medicine for their potential healing properties.",
+  "Mosses belong to a group of plants called bryophytes.",
+  "Mosses lack true roots, stems, and leaves, but they have specialized structures for water absorption and nutrient uptake.",
+  "There are over 12,000 known species of mosses.",
+  "Mosses can be found in various habitats, including forests, wetlands, deserts, and even Arctic regions.",
+  "Some mosses have unique adaptations to survive in extreme environments, such as desiccation-tolerant properties.",
+  "Mosses play important ecological roles, such as providing habitat and food for small organisms.",
+  "Mosses help prevent soil erosion by stabilizing the soil with their rhizoids and dense growth.",
+  "Mosses can absorb and retain large amounts of water, contributing to the regulation of water flow in ecosystems.",
+  "Mosses contribute to carbon sequestration by capturing and storing atmospheric carbon dioxide.",
+  "Mosses have been used as natural indicators of air pollution due to their sensitivity to environmental changes.",
+  "Certain species of mosses are used in traditional crafts, such as moss art, bonsai cultivation, and floral arrangements.",
+  "Mosses have been used as natural dyes, producing colors ranging from green to red and brown.",
+  "Mosses have antimicrobial properties and have been used in traditional medicine for wound healing and as antiseptics.",
+  "Mosses can act as biological indicators of environmental health and ecosystem quality.",
+  "Mosses have a unique reproductive cycle involving spores and require water for fertilization.",
+  "Mosses can form intricate and beautiful structures, such as cushions, mats, and carpets.",
+  "Some mosses have the ability to revive and grow after being completely desiccated.",
+  "Mosses can absorb pollutants from the air and water, contributing to air and water purification.",
+  "Certain moss species have adaptations to grow on rocks and other hard surfaces, forming impressive colonies.",
+  "Mosses have been studied for their potential in biomonitoring and bioremediation of contaminated sites.",
+];

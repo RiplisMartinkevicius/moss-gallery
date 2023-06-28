@@ -2,6 +2,7 @@ import { Box, Button, Typography } from "@mui/material";
 import MainLayout from "../layout/MainLayout";
 import { useState } from "react";
 import { mossCareTips } from "./MossCareTips";
+import { funFacts } from "./MossFunFacts";
 import WaterDropIcon from "@mui/icons-material/WaterDrop";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import WaterIcon from "@mui/icons-material/Water";
@@ -20,6 +21,12 @@ interface MossCareTip {
 
 export default function HomePage() {
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [funFact, setFunFact] = useState("");
+
+  const generateFunFact = () => {
+    const randomIndex = Math.floor(Math.random() * funFacts.length);
+    setFunFact(funFacts[randomIndex]);
+  };
 
   const handleCategorySelect = (category: string) => {
     setSelectedCategory(category);
@@ -85,17 +92,37 @@ export default function HomePage() {
         >
           View Gallery
         </Button> */}
-        <Typography
-          variant="h5"
-          component="h2"
-          gutterBottom
+        <Button
+          variant="contained"
+          onClick={generateFunFact}
           sx={{
-            textShadow: "2px 2px 4px rgba(0, 0, 0, 0.8)",
+            backgroundColor: "rgba(200, 225, 225, 0.7)",
+            color: "#464545",
+            fontWeight: "bold",
+            borderRadius: "10px",
+            padding: "10px 20px",
             marginBottom: "1rem",
+            boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)",
+            "&:hover": {
+              backgroundColor: "rgba(225, 225, 225, 0.9)",
+            },
           }}
         >
-          Click here for a fun fact about moss!: randomfactgenerator
-        </Typography>
+          Click here for a fun fact about moss!
+        </Button>
+        {funFact && (
+          <Typography
+            variant="h6"
+            component="h2"
+            gutterBottom
+            sx={{
+              textShadow: "2px 2px 4px rgba(0, 0, 0, 0.8)",
+              marginBottom: "1rem",
+            }}
+          >
+            {funFact}
+          </Typography>
+        )}
         <Typography
           variant="body1"
           component="p"
@@ -138,9 +165,14 @@ export default function HomePage() {
                 <h3>{tip.title}</h3>
               </Button>
               {expandedTipIndex === index && (
-                <div>
-                  <p>{tip.description}</p>
-                </div>
+                <Typography
+                  sx={{
+                    textShadow: "2px 2px 4px rgba(0, 0, 0, 0.8)",
+                    marginBottom: "1rem",
+                  }}
+                >
+                  {tip.description}
+                </Typography>
               )}
             </li>
           ))}

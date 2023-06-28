@@ -52,5 +52,3 @@ export const mossCareTips = [
     category: "Pest and Disease Control",
   },
 ];
-
-import WaterDropIcon from "@mui/icons-material/WaterDrop";
