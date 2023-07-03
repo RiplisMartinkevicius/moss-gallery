@@ -1,9 +1,45 @@
 import { Box, Card, CardContent, CardMedia, Typography } from "@mui/material";
+import { styled } from "@mui/system";
 
 interface GalleryImageProps {
   imageSrc: string;
   description: string;
 }
+
+const StyledCardContent = styled(CardContent)({
+  padding: 0,
+  "&:last-child": {
+    paddingBottom: 0,
+  },
+});
+
+const ImageContainer = styled(Box)({
+  position: "relative",
+  "&:hover .overlay": {
+    opacity: 1,
+  },
+});
+
+const ImageOverlay = styled(Box)({
+  position: "absolute",
+  top: 0,
+  left: 0,
+  width: "100%",
+  height: "100%",
+  backgroundColor: "rgba(0, 0, 0, 0.5)",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  opacity: 0,
+  transition: "opacity 0.3s ease",
+});
+
+const Description = styled(Typography)({
+  color: "#fff",
+  fontSize: "16px",
+  fontWeight: "bold",
+  textAlign: "center",
+});
 
 const GalleryImage: React.FC<GalleryImageProps> = ({
   imageSrc,
@@ -18,18 +54,41 @@ const GalleryImage: React.FC<GalleryImageProps> = ({
         margin: "20px",
       }}
     >
-      <Card sx={{ width: "200px" }}>
-        <CardMedia component="img" height="200px" image={imageSrc} alt="moss" />
-        <CardContent>
+      <Card sx={{ width: "80%" }}>
+        <ImageContainer>
+          <Box
+            sx={{
+              width: "100%",
+              paddingTop: "100%",
+              position: "relative",
+            }}
+          >
+            <CardMedia
+              component="img"
+              image={imageSrc}
+              alt="moss"
+              sx={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+              }}
+            />
+            <ImageOverlay className="overlay">
+              <Description>{description}</Description>
+            </ImageOverlay>
+          </Box>
+        </ImageContainer>
+        <StyledCardContent>
           <Typography
             variant="body1"
             component="p"
             textAlign="center"
             color="text.primary"
-          >
-            {description}
-          </Typography>
-        </CardContent>
+          ></Typography>
+        </StyledCardContent>
       </Card>
     </Box>
   );
