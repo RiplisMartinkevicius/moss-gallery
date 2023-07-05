@@ -76,6 +76,13 @@ export default function GalleryPage() {
     },
   ];
 
+  const getRandomImageSrc = () => {
+    const randomIndex = Math.floor(Math.random() * imagePaths.length);
+    return imagePaths[randomIndex].src;
+  };
+
+  const randomImageSrc = getRandomImageSrc();
+
   return (
     <MainLayout>
       <Box sx={{ marginTop: "2rem" }}>

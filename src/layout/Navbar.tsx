@@ -109,7 +109,7 @@ export default function Navbar() {
           <li style={{ marginRight: "1rem" }}>
             <a href="/about-moss">What is moss?</a>
           </li>
-          <li>
+          <li style={{ marginRight: "1rem" }}>
             <a href="/contact">Contact</a>
           </li>
         </ul>

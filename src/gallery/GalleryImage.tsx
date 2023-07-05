@@ -1,17 +1,10 @@
-import { Box, Card, CardContent, CardMedia, Typography } from "@mui/material";
+import { Box, Card, CardMedia, Typography } from "@mui/material";
 import { styled } from "@mui/system";
 
 interface GalleryImageProps {
   imageSrc: string;
   description: string;
 }
-
-const StyledCardContent = styled(CardContent)({
-  padding: 0,
-  "&:last-child": {
-    paddingBottom: 0,
-  },
-});
 
 const ImageContainer = styled(Box)({
   position: "relative",
@@ -81,14 +74,6 @@ const GalleryImage: React.FC<GalleryImageProps> = ({
             </ImageOverlay>
           </Box>
         </ImageContainer>
-        <StyledCardContent>
-          <Typography
-            variant="body1"
-            component="p"
-            textAlign="center"
-            color="text.primary"
-          ></Typography>
-        </StyledCardContent>
       </Card>
     </Box>
   );

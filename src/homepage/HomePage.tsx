@@ -39,7 +39,7 @@ export default function HomePage() {
   return (
     <MainLayout
       positionStyles={{
-        width: "50%",
+        width: "40%",
         left: "20px",
         right: "auto",
         marginRight: "auto",
@@ -70,15 +70,6 @@ export default function HomePage() {
           Explore the beauty and diversity of moss in our gallery. Discover
           captivating images and learn fascinating facts about moss.
         </Typography>
-        {/* <Button
-          //   component={GalleryPage}
-          //   to="/gallery"
-          variant="contained"
-          size="large"
-          sx={{ marginTop: "2rem" }}
-        >
-          View Gallery
-        </Button> */}
         <Button
           variant="contained"
           onClick={generateFunFact}
