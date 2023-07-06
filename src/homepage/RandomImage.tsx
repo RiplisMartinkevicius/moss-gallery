@@ -5,9 +5,9 @@ const RandomImage = ({ imageSrc }) => {
   const [imageUrl, setImageUrl] = useState(imageSrc);
 
   const getRandomImage = () => {
-    const imageWidth = 500; // Change this to adjust the desired image width
+    const imageWidth = 500;
     const randomId = Math.floor(Math.random() * 1000);
-    return `https://picsum.photos/${imageWidth}?random=${randomId}`;
+    return `https://source.unsplash.com/featured/?moss?${randomId}`;
   };
 
   const handleImageChange = () => {

@@ -1,11 +1,12 @@
-import { Box } from "@mui/material";
+import { ChangeEvent, FormEvent, useState } from "react";
+import { Box, Button, Typography, Toolbar } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { styled, alpha } from "@mui/material/styles";
 import InputBase from "@mui/material/InputBase";
-import Toolbar from "@mui/material/Toolbar";
-import GrassIcon from "@mui/icons-material/Grass";
+import { Link, useLocation } from "react-router-dom";
+import ForestIcon from "@mui/icons-material/Forest";
 
-const Search = styled("div")(({ theme }) => ({
+const Search = styled("form")(({ theme }) => ({
   position: "relative",
   borderRadius: "10px",
   backgroundColor: alpha(theme.palette.common.white, 0.15),
@@ -34,20 +35,36 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: "inherit",
   "& .MuiInputBase-input": {
     padding: theme.spacing(1, 1, 1, 0),
-
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create("width"),
     width: "100%",
     [theme.breakpoints.up("sm")]: {
-      width: "12ch",
+      width: "15ch",
       "&:focus": {
-        width: "20ch",
+        width: "21ch",
       },
     },
   },
 }));
 
-export default function Navbar() {
+const Navbar = () => {
+  const location = useLocation();
+  const [searchKeyword, setSearchKeyword] = useState("");
+
+  const handleSearch = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (searchKeyword.trim() !== "") {
+      const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(
+        searchKeyword
+      )}`;
+      window.location.href = searchUrl;
+    }
+  };
+
+  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setSearchKeyword(event.target.value);
+  };
+
   return (
     <Box
       sx={{
@@ -77,7 +94,11 @@ export default function Navbar() {
           justifyContent: "center",
         }}
       >
-        <GrassIcon />
+        <ForestIcon
+          sx={{
+            fontSize: "40px",
+          }}
+        />
         <Box
           sx={{
             display: "flex",
@@ -85,44 +106,130 @@ export default function Navbar() {
             marginLeft: "0.5rem",
           }}
         >
-          <h4>MOSS</h4>
-          <h4 style={{ marginLeft: "0.5rem" }}>PICS</h4>
+          <Typography
+            variant="h6"
+            component="h6"
+            sx={{
+              textShadow: "2px 2px 4px rgba(0, 0, 0, 0.8)",
+              fontWeight: "bold",
+              marginLeft: "0.5rem",
+            }}
+          >
+            MOSS
+          </Typography>
+          <Typography
+            variant="h6"
+            component="h6"
+            sx={{
+              textShadow: "2px 2px 4px rgba(0, 0, 0, 0.8)",
+              fontWeight: "bold",
+              marginLeft: "0.5rem",
+            }}
+          >
+            LOVE
+          </Typography>
         </Box>
       </Box>
 
-      <Toolbar sx={{ marginLeft: "auto", marginTop: "1rem" }}>
-        <ul
-          style={{
-            display: "flex",
-            listStyle: "none",
-            margin: 0,
-            padding: 0,
-            marginRight: "auto",
+      <Toolbar
+        sx={{
+          marginLeft: "auto",
+          marginTop: "1rem",
+          marginBottom: "13px",
+        }}
+      >
+        <Button
+          component={Link}
+          to="/"
+          variant="text"
+          disabled={location.pathname === "/"}
+          sx={{
+            width: "30%",
+            fontSize: "16.38px",
+            color: "white",
+            justifyContent: "center",
+            textTransform: "none",
+            textShadow: "2px 2px 4px rgba(0, 0, 0, 0.8)",
+            "&:hover": {
+              backgroundColor: "rgba(211, 211, 211, 0.5)",
+            },
+            "&:disabled": {
+              opacity: 0.5,
+              color: "red",
+            },
           }}
         >
-          <li style={{ marginRight: "1rem" }}>
-            <a href="/">Home</a>
-          </li>
-          <li style={{ marginRight: "1rem" }}>
-            <a href="/gallery">Gallery</a>
-          </li>
-          <li style={{ marginRight: "1rem" }}>
-            <a href="/about-moss">What is moss?</a>
-          </li>
-          <li style={{ marginRight: "1rem" }}>
-            <a href="/contact">Contact</a>
-          </li>
-        </ul>
-        <Search>
+          Home
+        </Button>
+
+        <Button
+          component={Link}
+          to="/gallery"
+          variant="text"
+          sx={{
+            width: "30%",
+            fontSize: "16.38px",
+            color: "white",
+            justifyContent: "flex-center",
+            textTransform: "none",
+            textShadow: "2px 2px 4px rgba(0, 0, 0, 0.8)",
+            "&:hover": {
+              backgroundColor: "rgba(211, 211, 211, 0.5)",
+            },
+          }}
+        >
+          Gallery
+        </Button>
+        <Button
+          component={Link}
+          to="/about-moss"
+          variant="text"
+          sx={{
+            width: "60%",
+            fontSize: "16.38px",
+            color: "white",
+            justifyContent: "flex-center",
+            textTransform: "none",
+            textShadow: "2px 2px 4px rgba(0, 0, 0, 0.8)",
+            "&:hover": {
+              backgroundColor: "rgba(211, 211, 211, 0.5)",
+            },
+          }}
+        >
+          What is moss?
+        </Button>
+        <Button
+          component={Link}
+          to="/contact"
+          variant="text"
+          sx={{
+            width: "0%",
+            fontSize: "16.38px",
+            color: "white",
+            justifyContent: "flex-center",
+            textTransform: "none",
+            textShadow: "2px 2px 4px rgba(0, 0, 0, 0.8)",
+            "&:hover": {
+              backgroundColor: "rgba(211, 211, 211, 0.5)",
+            },
+          }}
+        >
+          Contact
+        </Button>
+        <Search onSubmit={handleSearch}>
           <SearchIconWrapper>
             <SearchIcon />
           </SearchIconWrapper>
           <StyledInputBase
-            placeholder="Search…"
+            placeholder="Google Search…"
             inputProps={{ "aria-label": "search" }}
+            value={searchKeyword}
+            onChange={handleInputChange}
           />
         </Search>
       </Toolbar>
     </Box>
   );
-}
+};
+
+export default Navbar;

@@ -120,7 +120,7 @@ export default function HomePage() {
                 variant="text"
                 onClick={() => handleTipToggle(index)}
                 sx={{
-                  width: "30%",
+                  width: "50%",
                   justifyContent: "flex-center",
                   textTransform: "none",
                   textShadow: "2px 2px 4px rgba(0, 0, 0, 0.8)",

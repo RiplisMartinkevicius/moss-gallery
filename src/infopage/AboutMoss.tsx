@@ -11,7 +11,7 @@ export default function AboutMoss() {
           padding: "2rem",
           display: "flex",
           flexDirection: "column",
-          alignItems: "center", // Center the content horizontally
+          alignItems: "center",
         }}
       >
         <Typography
@@ -40,7 +40,7 @@ export default function AboutMoss() {
               height: "600px",
               borderRadius: "20px",
               overflow: "hidden",
-              marginRight: { md: "2rem" }, // Adjust the marginRight value for the image
+              marginRight: { md: "2rem" },
             }}
           >
             <CardMedia
@@ -59,7 +59,7 @@ export default function AboutMoss() {
               width: { xs: "100%", md: "40%" },
               textAlign: { xs: "center", md: "left" },
               pl: { md: "2rem" },
-              marginTop: { xs: "2rem", md: "0" }, // Adjust the marginTop value for the text
+              marginTop: { xs: "2rem", md: "0" },
             }}
           >
             <Typography
