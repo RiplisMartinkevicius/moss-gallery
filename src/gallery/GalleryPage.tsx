@@ -96,7 +96,7 @@ export default function GalleryPage() {
             textAlign: "center",
           }}
         >
-          Welcome to the Moss Gallery
+          The Moss Gallery
         </Typography>
         <Grid container spacing={2} justifyContent="center">
           {imagePaths.map((image, index) => (

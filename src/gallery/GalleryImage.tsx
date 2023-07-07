@@ -47,13 +47,14 @@ const GalleryImage: React.FC<GalleryImageProps> = ({
         margin: "20px",
       }}
     >
-      <Card sx={{ width: "80%" }}>
+      <Card sx={{ width: "80%", borderRadius: "20px" }}>
         <ImageContainer>
           <Box
             sx={{
               width: "100%",
               paddingTop: "100%",
               position: "relative",
+              borderRadius: "8px",
             }}
           >
             <CardMedia
