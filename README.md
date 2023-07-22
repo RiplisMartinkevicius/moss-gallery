@@ -1,14 +1,13 @@
+![image](https://github.com/RiplisMartinkevicius/moss-gallery/assets/61363982/8041f111-78e7-4e03-8e61-ce575f66e95b)
+
+
 ## Moss gallery
 
 This is a project that showcases moss pictures using React with TypeScript. It was built using Vite, for faster development. 
 Take a look here - https://moss-gallery.onrender.com
 
-It's still a WIP and I'm planning to add these functionalities and more:
-1. Search bar functionality.
-2. Create routes for the shown links.
-3. Implement the main gallery functionality, to show the images.
-4. Create home/moss info/contact pages.
-5. Clean up styling.
+![image](https://github.com/RiplisMartinkevicius/moss-gallery/assets/61363982/7adb5453-4842-4491-919c-2d9592677cad)
+
 
 
 ### Installation
