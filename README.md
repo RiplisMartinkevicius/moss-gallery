@@ -6,7 +6,8 @@
 This is a project that showcases moss pictures using React with TypeScript. It was built using Vite, for faster development. 
 Take a look here - https://moss-gallery.onrender.com
 
-![image](https://github.com/RiplisMartinkevicius/moss-gallery/assets/61363982/30bfd44d-2584-47c4-a84d-8b838193492e)
+![image](https://github.com/RiplisMartinkevicius/moss-gallery/assets/61363982/7adb5453-4842-4491-919c-2d9592677cad)
+
 
 
 ### Installation
