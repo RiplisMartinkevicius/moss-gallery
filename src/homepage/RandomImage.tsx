@@ -1,11 +1,14 @@
-import { Box, CssBaseline } from "@mui/material";
+import { Box, CardMedia, CssBaseline } from "@mui/material";
 import { useState } from "react";
 
-const RandomImage = ({ imageSrc }) => {
+interface RandomImageProps {
+  imageSrc: string;
+}
+
+const RandomImage: React.FC<RandomImageProps> = ({ imageSrc }) => {
   const [imageUrl, setImageUrl] = useState(imageSrc);
 
   const getRandomImage = () => {
-    const imageWidth = 500;
     const randomId = Math.floor(Math.random() * 1000);
     return `https://source.unsplash.com/featured/?moss?${randomId}`;
   };
@@ -20,23 +23,29 @@ const RandomImage = ({ imageSrc }) => {
       <CssBaseline />
       <Box
         sx={{
-          position: "relative",
-          margin: "20px",
-          marginTop: "150px",
-          height: "200px",
           width: "200px",
-          backgroundColor: "rgba(200, 200, 200, 0.4)",
-          borderRadius: "10px",
-          boxShadow:
-            "inset 0 0 0 1px rgba(255, 255, 255, 0.6), 0 8px 10px rgba(0, 0, 0, 0.6)",
-          backdropFilter: "blur(3px)",
-          padding: "1rem",
-          backgroundImage: `url(${imageUrl})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
+          height: "200px",
+          position: "relative",
+          borderRadius: "8px",
         }}
         onClick={handleImageChange}
-      ></Box>
+      >
+        <CardMedia
+          component="img"
+          image={imageUrl}
+          alt="moss"
+          sx={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            cursor: "pointer",
+            borderRadius: "15px",
+          }}
+        />
+      </Box>
     </>
   );
 };

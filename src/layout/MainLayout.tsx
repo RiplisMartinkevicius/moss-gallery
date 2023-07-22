@@ -2,6 +2,8 @@ import React, { ReactNode, CSSProperties } from "react";
 import { Box, CssBaseline } from "@mui/material";
 import backgroundImage from "./images/japan.jpg";
 import Navbar from "./Navbar";
+import RandomImageHolder from "./RandomImageHolder";
+import { useLocation } from "react-router-dom";
 
 interface MainLayoutProps {
   children: ReactNode;
@@ -14,6 +16,10 @@ const MainLayout: React.FC<MainLayoutProps> = ({
   children,
   positionStyles,
 }) => {
+  const location = useLocation();
+
+  const isHomePage = location.pathname === "/";
+
   return (
     <>
       <CssBaseline />
@@ -50,6 +56,10 @@ const MainLayout: React.FC<MainLayoutProps> = ({
         >
           {children}
         </Box>
+        <RandomImageHolder
+          isHomePage={isHomePage}
+          children={undefined}
+        ></RandomImageHolder>
       </Box>
     </>
   );
